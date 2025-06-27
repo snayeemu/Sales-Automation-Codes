@@ -1,0 +1,1 @@
+<aura:event type="APPLICATION" description="This event will be fired, when Connected_Data__c will be updated" />

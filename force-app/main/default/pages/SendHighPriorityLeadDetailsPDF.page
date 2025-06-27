@@ -1,0 +1,24 @@
+<apex:page standardController="Lead" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showHeader="false" sidebar="false">
+    <p>Dear Sales Rep,</p>
+    <p>Below is a Details of a High Priority lead {!Lead.name}.</p>
+    <table border="1" >
+        <tr>
+            <th>Lead Name</th><th>Lead Score</th>
+            <th>Lead Source</th><th>Lead Title</th>
+        </tr>
+        <tr>
+            <td><a href = 
+                "https://yourInstance.salesforce.com/{!Lead.Id}">{!Lead.Name}
+            </a></td>
+            <td>{!Lead.Lead_Score__c}</td>
+            <td>{!Lead.LeadSource}</td>
+            <td>{!Lead.Title}</td>
+        </tr>
+    </table>
+    <p/>
+    <center>
+        <apex:outputLink value="https://login.salesforce.com">
+            For more detailed information login to Salesforce.com
+        </apex:outputLink>
+    </center>
+</apex:page>

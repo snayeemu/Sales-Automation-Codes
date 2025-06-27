@@ -1,0 +1,53 @@
+<apex:page label="DisplayImage " name="DisplayImage">
+    <apex:image url="https://developer.salesforce.com/files/salesforce-developer-network-logo.png"/>
+    <!--
+    <apex:pageBlock title='Contact List'>
+		<apex:pageBlockTable value="{!contactList}" var='record'>
+        	<apex:column value='{!record.FirstName}'/>
+            <apex:column value='{!record.LastName}'/>
+            <apex:column value='{!record.CreatedDate}'/>
+            <apex:column value='{!record.Id}'/>
+        </apex:pageBlockTable>
+    	
+    </apex:pageBlock>
+    
+    
+    <p>
+        Value from a Controller Extension Method = {!SomeValue}
+    </p>
+    <apex:pageBlock title="This is {!Contact.Name}">
+    	<p>
+            We are viewing {!Contact.Name} details - 😲
+        </p>
+        
+        <apex:form>
+        	<apex:inputField value='{!Contact.FirstName}'/>
+            <apex:inputField value='{!Contact.LastName}'/>
+            <apex:commandButton value='Save Contact' action='{!save}'/>
+        </apex:form>
+    </apex:pageBlock>
+    
+	<apex:pageBlock title="Contact List">
+    	<apex:pageBlockTable value="{!Contacts}" var='record'>
+        	<apex:column value='{!record.FirstName}'/>
+            <apex:column value='{!record.LastName}'/>
+            <apex:column value='{!record.CreatedDate}'/>
+            <apex:column value='{!record.Id}'/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+	<apex:pageBlock title="Hello {!$User.FirstName}">
+    	<p>
+            You are viewing the Contact Named : {!Contact .Name}.
+        </p>
+        <apex:detail relatedList="false" inlineEdit="false"/>
+    </apex:pageBlock>
+    <p>
+        Max of (1, 2, 3, 4, 5, 6) is : {!Max(1, 2, 3, 4, 5, 6)}
+    </p>
+    
+    <apex:outputText value="Std Test Value"></apex:outputText>
+    <c:DemoVFCComponent1 myAttr='Test Value'/>
+    <input type='text' value='Test Value'/> 
+    -->
+</apex:page>

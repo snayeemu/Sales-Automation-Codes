@@ -1,0 +1,16 @@
+<apex:page standardStylesheets="true" showHeader="false">
+    <apex:includeLightning />
+    <div id='LwcId'/>
+    <script>
+    	$Lightning.use('c:resumeWrapper_aura', function(){
+        	$Lightning.createComponent('c:resume',
+			{},
+			'LwcId',
+            function(component, status, errorMessage){
+            	if(status === 'SUCCESS') console.log('Success! Component Created and rendered.');
+                else if(status === 'INCOMPLETE') console.log('INCOMPLETE! No response from server.');
+                else if(status === 'ERROR') console.log('ERROR: ' + errorMessage);
+            });
+        });
+    </script>
+</apex:page>

@@ -1,0 +1,21 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Your score" icon-name="action:preview">
+        
+        <div class="slds-m-around_large">
+            <h1>Attempted: {marks.attempted}</h1>
+            <h1>Score: {marks.obtainedMarks}</h1>
+        </div>
+    </lightning-card>
+    <template for:each={questions} for:item="question" for:index="i">
+        <lightning-card key={questions.id} icon-name="action:new_note" style="background-color: red;">
+            <header slot="title" data-id={i} >
+                {i}. {question.question}
+            </header>
+            <!-- Simple -->
+            <lightning-tile>
+                <c-question-tile question={question} onanswered={handleAnswer} data-question-number={i}></c-question-tile>
+            </lightning-tile>
+                
+        </lightning-card>
+    </template>
+</template>

@@ -1,0 +1,28 @@
+<template>
+    <c-team-record-search onsearchevent={handleSearchEvent}></c-team-record-search>
+    
+    <lightning-card  variant="Narrow"  title="First Ten Teams" icon-name="standard:account">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th scope="col"> Team Name </th>
+                    <th scope="col"> Player Name </th>
+                    <th scope="col"> Position </th>
+                    <th scope="col"> Salary </th>
+                </tr>
+            </thead>
+            <template for:each={teams} for:item="team">
+                <tbody key={team.id}>
+                    <tr class="slds-hint-parent">
+                        <th scope="row"> <a href="#" onclick={handleShowModal} data-id={team.Id}>
+                            {team.Name}
+                        </a> </th>
+                        <th scope="row"> {team.Player_Name__c} </th>
+                        <th scope="row"> {team.Position__c} </th>
+                        <th scope="row"> {team.Individual_Salary__c} </th>
+                    </tr>
+                </tbody>
+            </template>
+        </table>
+    </lightning-card>
+</template>

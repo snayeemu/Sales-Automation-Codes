@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller='ContactController'>
+    <aura:attribute name='contacts' type='List'/>
+    <aura:attribute name='Columns' type='List'/>
+    <aura:handler name='init' value='{!this}' action='{!c.doInit}' />
+    
+    <lightning:datatable data="{! v.contacts }" columns="{! v.Columns }" keyField="Id" hideCheckboxColumn="true"/>
+</aura:component>

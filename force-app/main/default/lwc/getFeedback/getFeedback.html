@@ -1,0 +1,31 @@
+<template>
+    <div class="container">
+        <form action="action_page.php">
+            <div class="row">
+            <div class="col-25">
+                <label for="Rating">Rating</label>
+            </div>
+            <div class="col-75">
+                <select id="rating" name="rating" onchange={handleRatingChange}>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+                </select>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-25">
+                <label for="feedback">Feedback</label>
+            </div>
+            <div class="col-75">
+                <lightning-input-rich-text value={review} id="feedback" name="feedback" placeholder="Write something.." style="height:200px" onchange={handleFeedbackChange}></lightning-input-rich-text>
+            </div>
+            </div>
+            <div class="row">
+            <input type="submit" value="Submit" onclick={handleSubmit}>
+            </div>
+        </form>
+    </div>
+</template>

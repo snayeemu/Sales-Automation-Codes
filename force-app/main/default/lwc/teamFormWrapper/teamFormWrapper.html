@@ -1,0 +1,9 @@
+<template>
+    <div>
+        <template if:true={visible}>
+            <c-team-form
+            form-id={formId}
+            onformsubmitted={handleOnFormSubmitted}></c-team-form>
+        </template>
+    </div>
+</template>

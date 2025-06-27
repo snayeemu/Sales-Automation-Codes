@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Create a Team" icon-name="standard:account">
+        <template if:true={visible}>
+            <lightning-record-form
+            object-api-name="Team__c"
+            fields={fields}
+            onsubmit={handleSubmit}
+            onsuccess={handleSuccess}
+            ></lightning-record-form>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,6 @@
+<apex:component >
+    <apex:attribute name="myAttr" type="String" description="Test Attribute"/>
+    <p>
+        The value of myAttr is {!myAttr}
+    </p>
+</apex:component>

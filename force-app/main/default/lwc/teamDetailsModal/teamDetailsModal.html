@@ -1,0 +1,32 @@
+<template>
+    <template if:true={content}>
+        <lightning-modal-header label={content.Name}></lightning-modal-header>
+        <lightning-modal-body>
+                <!-- <div class="slds-modal__content slds-p-around_medium" style="display: flex; flex-wrap: wrap; column-gap: 40px; row-gap: 12px; font-size: larger;">
+                    <h1><strong>Team Name:</strong> {content.Name}</h1>
+                    <p><strong>Player Name:</strong> {content.Player_Name__c}</p>
+                    <p><strong>Position:</strong> {content.Position__c}</p>
+                    <p><strong>Salary:</strong> {content.Individual_Salary__c}</p>
+                    <p><strong>Category:</strong> {content.Category__c}</p>
+                    <p><strong>Country:</strong> {content.Country_Name__c}</p>
+                </div> -->
+            <lightning-record-view-form
+                        record-id={content.Id}
+                        object-api-name="Team__c">
+                <div class="slds-box slds-theme_default">
+                    <lightning-output-field field-name="Name"></lightning-output-field>
+                    <lightning-output-field field-name="Player_Name__c"></lightning-output-field>
+                    <lightning-output-field field-name="Position__c"></lightning-output-field>
+                    <lightning-output-field field-name="Individual_Salary__c"></lightning-output-field>
+                    <lightning-output-field field-name="Category__c"></lightning-output-field>
+                    <lightning-output-field field-name="Country_Name__c"></lightning-output-field>
+                </div>
+            </lightning-record-view-form>
+        </lightning-modal-body>
+        <lightning-modal-footer>
+            <lightning-button label="OK" onclick={handleOkay}></lightning-button>
+        </lightning-modal-footer>
+    </template>
+
+
+</template>

@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller='ConnectionController'>
+    <aura:attribute name='connectedData' type='List'/>
+    <aura:attribute name='columns' type='List'/>
+    <aura:handler name='init' value='{!this}' action='{!c.doInit}'/>
+    <aura:handler event="c:ConnectedDataUpdatedEvent" action="{!c.doInit}"/>
+
+    
+    <lightning:datatable
+                keyField="Id"
+                data="{! v.connectedData }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    <!-- <div style="visibility: hidden;"> -->
+        
+    <!-- </div> -->
+</aura:component>

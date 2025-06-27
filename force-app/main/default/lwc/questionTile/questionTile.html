@@ -1,0 +1,19 @@
+<template>
+        <div >
+            <!-- Simple -->
+            <div class="slds-m-horizontal_small" style="display: flex; row-gap: 12px; flex-wrap: wrap; column-gap: 8px;">
+                    <template for:each={question.options} for:item="option">
+                        <div key={option} >
+                          <lightning-button
+                          variant="brand-outline"
+                          label={option} 
+                          onclick={handleClick} 
+                        ></lightning-button>
+                        </div>
+                    </template>
+            </div>
+
+            <!-- class="slds-m-around_small" style="display: inline-block;" -->
+           
+        </div>
+</template>

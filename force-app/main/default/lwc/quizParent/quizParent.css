@@ -1,0 +1,9 @@
+.attempted-quiz {
+    color: yellow;
+}
+.attempted-quiz-success {
+    color: green;
+}
+.attempted-quiz-error {
+    color: red;
+}

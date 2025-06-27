@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller='OpportunityController'>
+    <aura:attribute name='opportunities' type='List'/>
+    <aura:attribute name='columns' type='List'/>
+    <aura:handler name='init' value='{!this}' action='{!c.doInit}'/>
+    
+    <lightning:datatable
+                keyField="Id"
+                data="{! v.opportunities }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+</aura:component>

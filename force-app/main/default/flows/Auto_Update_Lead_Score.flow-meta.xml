@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_Score</name>
+        <label>Check Score</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_Lead_Score_2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Score_greater_than_100</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LeadScore</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>100.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead_Score</targetReference>
+            </connector>
+            <label>Score greater than 100</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>LeadScore</name>
+        <dataType>Number</dataType>
+        <expression>IF(TEXT({!$Record.LeadSource})  == &apos;Web&apos;, 20, 
+IF(TEXT({!$Record.LeadSource})  == &apos;Referral&apos;, 30, 
+IF(TEXT({!$Record.LeadSource}) == &apos;Cold Call&apos;, 10, 0)))
++
+IF(TEXT({!$Record.Industry})  == &apos;Technology&apos;, 30, 
+IF(TEXT({!$Record.Industry})  == &apos;Education&apos;, 20,  10))
++
+IF(TEXT({!$Record.ProductInterest__c})  == &apos;Premium Plan&apos;, 40, 
+IF(TEXT({!$Record.ProductInterest__c})  == &apos;Basic Plan&apos;, 20,  0))
++
+IF(TEXT({!$Record.NumberOfEmployees})  &gt;= &apos;500&apos;, 40, 
+IF(TEXT({!$Record.NumberOfEmployees})  &gt;= &apos;100&apos;, 20,  0))
++
+IF({!$Record.Country}  == &apos;North America&apos;, 25, 
+IF({!$Record.Country}  == &apos;Dubai&apos;, 20,  0))
++
+IF(TEXT({!$Record.AnnualRevenue})  &gt;= &apos;1000000&apos;, 30, 
+IF(TEXT({!$Record.AnnualRevenue})  &gt;= &apos;500000&apos;, 20,  0))
++
+IF({!$Record.Title}  == &apos;CEO&apos;, 30, 
+IF({!$Record.Title}  == &apos;CTO&apos;, 30,
+IF({!$Record.Title}  == &apos;Manager&apos;, 20,
+IF({!$Record.Title}  == &apos;Executive&apos;, 10, 0))))</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Auto Update Lead Score {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Auto Update Lead Score</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Lead_Score</name>
+        <label>Update Lead Score</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Lead_Score__c</field>
+            <value>
+                <numberValue>100.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Lead_Score_2</name>
+        <label>Update Lead Score 2</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Lead_Score__c</field>
+            <value>
+                <elementReference>LeadScore</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Score</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <aura:attribute name="var1" type="String" default="Test Default Value"/>
+    <h1>
+    	Component Attribute's Value: {! v.var1 }
+    </h1>
+</aura:component>

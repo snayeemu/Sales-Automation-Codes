@@ -1,0 +1,3 @@
+<apex:page label="DisplayUserInfo" name="DisplayUserInfo">
+    {!$User.FirstName} {!$User.LastName}
+</apex:page>

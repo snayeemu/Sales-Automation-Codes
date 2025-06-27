@@ -1,0 +1,17 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Search Teams" icon-name="standard:account">
+        <lightning-record-picker
+            label="Teams"
+            placeholder="Search Teams..."
+            object-api-name="Team__c"
+            onchange={handleChange}
+            matching-info={matchingInfo}>
+        >
+        </lightning-record-picker>
+        <lightning-button 
+          variant="base"
+          label="Search" 
+          onclick={handleSearch} 
+        ></lightning-button>
+    </lightning-card>
+</template>

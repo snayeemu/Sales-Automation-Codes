@@ -1,0 +1,133 @@
+<template>
+    <div class="resume">
+        <div class="base">
+            <div class="profile">
+            <div class="photo">
+                <img src={profilePic} alt="Profile Picture">
+            </div>
+            <div class="info">
+                <h1 class="name">Shaikh Nayeem Uddin </h1>
+                <h2 class="job">Salesforce Architect</h2>
+            </div>
+            </div>
+            <div class="about">
+            <h3>About Me</h3>
+            A dedicated and experienced Salesforce Architect at Inovi Solutions with a proven track record of progressing from a Junior Developer to a Senior Developer and Architect. Specializing in creating robust, scalable solutions on the Salesforce platform using LWC, Aura, and Apex. Passionate about problem-solving and leveraging a strong foundation in web technologies to build exceptional user experiences.
+            </div>
+            <div class="contact">
+            <h3>Contact Me</h3>
+            <div class="call"><a href="tel:+8801705213335"><i class="fas fa-phone"></i><span>+8801705213335 </span></a></div>
+            <div class="address"><a href="#"><i class="fas fa-map-marker"></i><span>Lalmatia, Dhaka, Bangladesh </span></a>
+            </div>
+            <div class="email"><a href="mailto:snayeemu2@gmail.com"><i class="fas fa-envelope"></i><span>snayeemu2@gmail.com </span></a></div>
+            <div class="website"><a href="https://web-pro-nayeem.netlify.app/" target="_blank"> <i class="fas fa-briefcase"></i><span>Portfolio </span></a></div>
+            </div>
+            <div class="follow">
+            <h3>Follow Me</h3>
+            <div class="box">
+                <a href="https://www.linkedin.com/in/snayeemu" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/snayeemu" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            </div>
+        </div>
+        <div class="func">
+            <div class="work">
+            <h3><i class="fa fa-briefcase"></i>Experience</h3>
+            <ul>
+                <li><span>Salesforce Architect</span><small>Inovi Solutions</small><small>Jan 2027 - Future</small></li>
+                <li><span>Senior Salesforce Developer</span><small>Inovi Solutions</small><small>Jun 2026 - Dec 2027</small></li>
+                <li><span>Junior Salesforce Developer</span><small>Inovi Solutions</small><small>Jan 2025 - Present</small></li>
+            </ul>
+            </div>
+            <div class="edu">
+            <h3><i class="fa fa-graduation-cap"></i>Education</h3>
+            <ul>
+                <li><span>B.SC in CSE</span><small>Manarat International University</small><small>CGPA: 3.90</small></li>
+                <li><span>HSC</span><small>Govt. Sundarban Adarsha College, Khulna</small></li>
+            </ul>
+            </div>
+            <div class="skills-prog">
+            <h3><i class="fas fa-code"></i>Programming Skills</h3>
+            <ul>
+                <li data-percent="95"><span>Apex & Triggers</span>
+                <div class="skills-bar">
+                    <div class="bar"></div>
+                </div>
+                </li>
+                <li data-percent="95"><span>LWC & Aura</span>
+                <div class="skills-bar">
+                    <div class="bar"></div>
+                </div>
+                </li>
+                <li data-percent="90"><span>Visualforce</span>
+                <div class="skills-bar">
+                    <div class="bar"></div>
+                </div>
+                </li>
+                <li data-percent="85"><span>Async Apex & Testing</span>
+                <div class="skills-bar">
+                    <div class="bar"></div>
+                </div>
+                </li>
+                <li data-percent="90"><span>ReactJs</span>
+                <div class="skills-bar">
+                    <div class="bar"></div>
+                </div>
+                </li>
+                <li data-percent="80"><span>JavaScript ES6</span>
+                <div class="skills-bar">
+                    <div class="bar"></div>
+                </div>
+                </li>
+                <li data-percent="75"><span>NodeJs & ExpressJs</span>
+                <div class="skills-bar">
+                    <div class="bar"></div>
+                </div>
+                </li>
+            </ul>
+            </div>
+            <div class="skills-soft">
+            <h3><i class="fas fa-tools"></i>Tools & Platforms</h3>
+            <ul>
+                <li data-percent="95">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45"></circle>
+                    <circle class="cbar" cx="50" cy="50" r="45"></circle>
+                </svg><span>VS Code</span><small></small>
+                </li>
+                <li data-percent="95">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45"></circle>
+                    <circle class="cbar" cx="50" cy="50" r="45"></circle>
+                </svg><span>Git & GitHub</span><small></small>
+                </li>
+                <li data-percent="90">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45"></circle>
+                    <circle class="cbar" cx="50" cy="50" r="45"></circle>
+                </svg><span>Chrome Dev Tools</span><small></small>
+                </li>
+                <li data-percent="80">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45"></circle>
+                    <circle class="cbar" cx="50" cy="50" r="45"></circle>
+                </svg><span>Netlify & Vercel</span><small></small>
+                </li>
+            </ul>
+            </div>
+            <div class="interests">
+            <h3><i class="fas fa-star"></i>Problem Solving</h3>
+            <div class="interests-items">
+                <div class="art"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="art"><i class="fab fa-cuttlefish"></i><span>C / C++</span></div>
+                <div class="movies"><i class="fab fa-java"></i><span>Java</span></div>
+                <div class="music"><i class="fas fa-database"></i><span>SQL</span></div>
+                <div class="games"><i class="fas fa-sitemap"></i><span>Data Structures</span></div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="feedbackContainer">
+        <c-get-feedback></c-get-feedback>
+    </div>
+</template>
